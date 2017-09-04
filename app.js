@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000
 // https://movies-to-the-max.firebaseapp.com/
 const corsOptions = {
   "origin": '*',
-  "methods": 'GET,OPTIONS,POST',
+  "methods": 'GET, POST',
   "allowedHeaders": ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'X-Access-Token'],
   "credentials": true,
   "optionsSuccessStatus": 204
