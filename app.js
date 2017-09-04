@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000
 // https://movies-to-the-max.firebaseapp.com/
 const corsOptions = {
   "origin": '*',
-  "methods": 'GET,HEAD,OPTIONS,POST',
+  "methods": 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
   "allowedHeaders": ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'X-Access-Token'],
   "credentials": true,
   "optionsSuccessStatus": 204
@@ -20,8 +20,8 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// app.use('*', cors(corsOptions));//preflight for all
-app.use(cors(corsOptions))
+app.use('*', cors(corsOptions));//preflight for all
+// app.use(cors(corsOptions))
 
 
 app.use('/', routes);
