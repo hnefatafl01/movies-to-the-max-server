@@ -4,19 +4,24 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
+const corsOptions = {
+  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'X-Access-Token'],
+  credentials: true,
+  methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+  origin: 'http://localhost:4200',
+  preflightContinue: false
+};
 
 const routes = require('./routes');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cors({
-  "origin": "*",
-  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-  "credentials":"true",
-  "preflightContinue": true,
-  "optionsSuccessStatus": 204
-}));
+
+
+app.use(cors(corsOptions));
+app.use('*', cors(corsOptions));
+
 
 app.use('/', routes);
 
