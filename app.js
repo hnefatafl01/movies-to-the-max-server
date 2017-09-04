@@ -9,7 +9,8 @@ const corsOptions = {
   allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'],
   credentials: true,
   methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-  origin: 'https://movies-to-the-max.firebaseapp.com/'
+  // origin: 'https://movies-to-the-max.firebaseapp.com/'
+  origin: true
 };
 
 const routes = require('./routes');
