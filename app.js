@@ -6,10 +6,11 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000
 const corsOptions = {
-  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'],
-  credentials: true,
-  methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-  origin: '*'
+  "origin": 'https://movies-to-the-max.firebaseapp.com/',
+  "methods": 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+  "allowedHeaders": ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'X-Access-Token'],
+  "credentials": true,
+  "optionsSuccessStatus": 204
 };
 
 const routes = require('./routes');
