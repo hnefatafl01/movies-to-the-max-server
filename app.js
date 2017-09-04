@@ -4,6 +4,8 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
+// const server = require('http').Server(app);
+const port = process.env.PORT || 3000
 const corsOptions = {
   allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'X-Access-Token'],
   credentials: true,
@@ -25,6 +27,12 @@ app.use('*', cors(corsOptions));
 
 app.use('/', routes);
 
-app.listen(3000, () => {
-  console.log('listening on port 3000');
+app.listen(port, () => {
+  console.log('listening on port ', port);
 });
+
+
+// module.exports = {
+//   app,
+//   server
+// }
