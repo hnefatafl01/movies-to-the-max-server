@@ -5,9 +5,10 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000
+// https://movies-to-the-max.firebaseapp.com/
 const corsOptions = {
-  "origin": 'https://movies-to-the-max.firebaseapp.com/',
-  "methods": 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+  "origin": '*',
+  "methods": 'GET,OPTIONS,POST',
   "allowedHeaders": ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'X-Access-Token'],
   "credentials": true,
   "optionsSuccessStatus": 204
