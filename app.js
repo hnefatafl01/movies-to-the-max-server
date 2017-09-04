@@ -4,15 +4,12 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
-// const server = require('http').Server(app);
 const port = process.env.PORT || 3000
 const corsOptions = {
   allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'],
   credentials: true,
   methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-  origin: 'http://localhost:4200',
-  // preflightContinue: false
-  // , 'X-Access-Token'
+  origin: 'http://localhost:4200'
 };
 
 const routes = require('./routes');
@@ -31,9 +28,3 @@ app.use('/', routes);
 app.listen(port, () => {
   console.log('listening on port ', port);
 });
-
-
-// module.exports = {
-//   app,
-//   server
-// }
