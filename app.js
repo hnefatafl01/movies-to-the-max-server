@@ -7,11 +7,12 @@ const app = express();
 // const server = require('http').Server(app);
 const port = process.env.PORT || 3000
 const corsOptions = {
-  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'X-Access-Token'],
+  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'],
   credentials: true,
   methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
   origin: 'http://localhost:4200',
   // preflightContinue: false
+  // , 'X-Access-Token'
 };
 
 const routes = require('./routes');
