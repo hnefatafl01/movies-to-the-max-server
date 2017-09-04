@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('*', cors(corsOptions));//preflight for all
-// app.use(cors(corsOptions))
+
 
 
 app.use('/', routes);
