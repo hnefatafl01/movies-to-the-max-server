@@ -8,7 +8,7 @@ router.post(`/search`, (req, res) => {
   request.get(`http://www.omdbapi.com/?s=${search}&apikey=${API_KEY}`).pipe(res)
 })
 
-router.get('/search/:id', (req, res) => {
+router.get('/result/:id', (req, res) => {
   const id = req.params.id;
   request.get(`http://www.omdbapi.com/?i=${id}&apikey=${API_KEY}`).pipe(res)
 })
